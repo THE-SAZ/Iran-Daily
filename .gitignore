@@ -1,0 +1,38 @@
+# ── Iran-Daily ──────────────────────────────
+# Author: THE SAZ (https://github.com/THE-SAZ)
+# ────────────────────────────────────────────
+
+# Dependencies
+node_modules/
+vendor/
+
+# Build output
+frontend/dist/
+frontend/.vite/
+
+# Cache
+backend/storage/cache/*
+!backend/storage/cache/.gitkeep
+
+# Data (auto-generated)
+backend/storage/data/*
+!backend/storage/data/.gitkeep
+
+# Environment
+.env
+.env.local
+.env.production
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
