@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Iran-Daily — Banner
+  Author: THE SAZ (https://github.com/THE-SAZ)
+  License: MIT
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400" role="img" aria-label="Iran-Daily Banner">
+  <defs>
+    <!-- پس‌زمینه اصلی -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e27"/>
+      <stop offset="50%" stop-color="#111633"/>
+      <stop offset="100%" stop-color="#0a0e27"/>
+    </linearGradient>
+
+    <!-- گرادیان پرچم ایران -->
+    <linearGradient id="flag" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f87171"/>
+    </linearGradient>
+
+    <!-- گرادیان متن -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+
+    <!-- گرادیان طلایی -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <!-- درخشش سبز -->
+    <radialGradient id="glowGreen" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4ade80" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- درخشش آبی -->
+    <radialGradient id="glowBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- الگوی شبکه -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e2451" stroke-width="0.5" opacity="0.5"/>
+    </pattern>
+
+    <!-- فیلتر سایه -->
+    <filter id="textShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- پس‌زمینه -->
+  <rect width="1280" height="400" fill="url(#bg)"/>
+
+  <!-- شبکه پس‌زمینه -->
+  <rect width="1280" height="400" fill="url(#grid)"/>
+
+  <!-- هاله‌های درخشش -->
+  <circle cx="200" cy="200" r="280" fill="url(#glowGreen)"/>
+  <circle cx="1080" cy="200" r="280" fill="url(#glowBlue)"/>
+
+  <!-- نوار رنگی پرچم ایران (بالا) -->
+  <rect x="0" y="0" width="1280" height="4" fill="url(#flag)"/>
+  <!-- نوار رنگی پرچم ایران (پایین) -->
+  <rect x="0" y="396" width="1280" height="4" fill="url(#flag)"/>
+
+  <!-- ── لوگو در سمت راست ─────────────────── -->
+  <g transform="translate(1000, 100)">
+    <!-- بدنه لوگو -->
+    <rect x="0" y="0" width="200" height="200" rx="48" fill="#151a3a" stroke="#1e2451" stroke-width="2"/>
+
+    <!-- حلقه رنگی -->
+    <circle cx="100" cy="100" r="72" fill="none" stroke="url(#flag)" stroke-width="3" stroke-dasharray="220 220" stroke-linecap="round" transform="rotate(-90 100 100)"/>
+
+    <!-- حلقه نقطه‌چین -->
+    <circle cx="100" cy="100" r="58" fill="none" stroke="#4ade80" stroke-width="1" stroke-dasharray="2 5" opacity="0.5"/>
+
+    <!-- حرف I -->
+    <rect x="94" y="56" width="10" height="88" rx="5" fill="url(#flag)"/>
+
+    <!-- قوس D -->
+    <path d="M 94 56 Q 138 56 138 100 Q 138 144 94 144"
+          fill="none" stroke="#4ade80" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- نقطه Live -->
+    <circle cx="132" cy="68" r="7" fill="#4ade80">
+      <animate attributeName="r" values="7;10;7" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ── متن اصلی ─────────────────────────────── -->
+  <g filter="url(#textShadow)">
+    <!-- عنوان اصلی -->
+    <text x="120" y="180"
+          font-family="Vazirmatn, Segoe UI, system-ui, -apple-system, sans-serif"
+          font-size="96"
+          font-weight="800"
+          fill="url(#titleGrad)"
+          letter-spacing="-2">Iran-Daily</text>
+
+    <!-- زیرعنوان فارسی -->
+    <text x="120" y="235"
+          font-family="Vazirmatn, Segoe UI, system-ui, sans-serif"
+          font-size="26"
+          font-weight="500"
+          fill="#9fa8da"
+          opacity="0.9">داشبورد زنده کاربران حرفه‌ای ایرانی</text>
+
+    <!-- خط جداکننده -->
+    <line x1="120" y1="260" x2="700" y2="260" stroke="#1e2451" stroke-width="1"/>
+
+    <!-- برچسب‌های فناوری -->
+    <g transform="translate(120, 285)">
+      <rect x="0" y="0" width="90" height="30" rx="15" fill="#151a3a" stroke="#4ade80" stroke-width="1"/>
+      <text x="45" y="20" font-family="monospace" font-size="13" fill="#4ade80" text-anchor="middle" font-weight="600">TypeScript</text>
+
+      <rect x="100" y="0" width="70" height="30" rx="15" fill="#151a3a" stroke="#777BB4" stroke-width="1"/>
+      <text x="135" y="20" font-family="monospace" font-size="13" fill="#a78bfa" text-anchor="middle" font-weight="600">PHP 8.3</text>
+
+      <rect x="180" y="0" width="80" height="30" rx="15" fill="#151a3a" stroke="#22d3ee" stroke-width="1"/>
+      <text x="220" y="20" font-family="monospace" font-size="13" fill="#22d3ee" text-anchor="middle" font-weight="600">Live SSE</text>
+
+      <rect x="270" y="0" width="90" height="30" rx="15" fill="#151a3a" stroke="#fbbf24" stroke-width="1"/>
+      <text x="315" y="20" font-family="monospace" font-size="13" fill="url(#goldGrad)" text-anchor="middle" font-weight="600">Docker</text>
+    </g>
+  </g>
+
+  <!-- ── امضای توسعه‌دهنده ────────────────────── -->
+  <g transform="translate(120, 340)">
+    <text x="0" y="14"
+          font-family="Vazirmatn, Segoe UI, sans-serif"
+          font-size="14"
+          fill="#5c6bc0">Crafted with ❤️ by</text>
+    <text x="130" y="14"
+          font-family="Vazirmatn, Segoe UI, sans-serif"
+          font-size="15"
+          font-weight="700"
+          fill="url(#goldGrad)">THE SAZ</text>
+    <text x="215" y="14"
+          font-family="monospace"
+          font-size="13"
+          fill="#5c6bc0">· github.com/THE-SAZ</text>
+  </g>
+
+  <!-- ستاره‌های تزئینی -->
+  <g fill="#9fa8da" opacity="0.4">
+    <circle cx="80" cy="80" r="1.5"/>
+    <circle cx="350" cy="60" r="1"/>
+    <circle cx="500" cy="340" r="1.5"/>
+    <circle cx="820" cy="80" r="1"/>
+    <circle cx="900" cy="340" r="1.5"/>
+    <circle cx="1180" cy="60" r="1"/>
+    <circle cx="1240" cy="350" r="1.5"/>
+  </g>
+</svg>
