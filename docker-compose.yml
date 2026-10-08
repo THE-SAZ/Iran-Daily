@@ -1,0 +1,36 @@
+# ──────────────────────────────────────────────
+# Iran-Daily — Docker Compose
+# Author: THE SAZ (https://github.com/THE-SAZ)
+# ──────────────────────────────────────────────
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: iran-daily
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-8080}:80"
+    volumes:
+      - cache-data:/var/www/html/storage/cache
+      - app-data:/var/www/html/storage/data
+    environment:
+      - TZ=Asia/Tehran
+      - APP_ENV=production
+    labels:
+      - "com.the-saz.project=iran-daily"
+      - "com.the-saz.author=THE SAZ"
+      - "com.the-saz.url=https://github.com/THE-SAZ"
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  cache-data:
+    driver: local
+  app-data:
+    driver: local
