@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Iran-Daily — Logo
+  Author: THE SAZ (https://github.com/THE-SAZ)
+  License: MIT
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Iran-Daily Logo">
+  <defs>
+    <!-- پس‌زمینه گرادیانی -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e27"/>
+      <stop offset="100%" stop-color="#151a3a"/>
+    </linearGradient>
+
+    <!-- حلقه بیرونی -->
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="50%" stop-color="#e8eaf6"/>
+      <stop offset="100%" stop-color="#f87171"/>
+    </linearGradient>
+
+    <!-- درخشش -->
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4ade80" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- فیلتر سایه -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- بدنه اصلی -->
+  <rect x="8" y="8" width="240" height="240" rx="56" fill="url(#bgGrad)" stroke="#1e2451" stroke-width="2"/>
+
+  <!-- هاله درخشش مرکزی -->
+  <circle cx="128" cy="128" r="90" fill="url(#glow)"/>
+
+  <!-- حلقه بیرونی سه‌رنگ (پرچم ایران) -->
+  <circle cx="128" cy="128" r="86" fill="none" stroke="url(#ringGrad)" stroke-width="4" stroke-dasharray="270 270" stroke-linecap="round" transform="rotate(-90 128 128)" opacity="0.9"/>
+
+  <!-- حلقه داخلی نقطه‌چین -->
+  <circle cx="128" cy="128" r="72" fill="none" stroke="#4ade80" stroke-width="1" stroke-dasharray="2 6" opacity="0.4"/>
+
+  <!-- نماد مرکزی: حرف "I" و "D" به سبک مینیمال -->
+  <g filter="url(#shadow)">
+    <!-- محور عمودی -->
+    <rect x="122" y="76" width="12" height="104" rx="6" fill="url(#ringGrad)"/>
+
+    <!-- قوس D -->
+    <path d="M 122 76 Q 176 76 176 128 Q 176 180 122 180"
+          fill="none" stroke="#4ade80" stroke-width="12" stroke-linecap="round"/>
+
+    <!-- نقطه تپش (Live indicator) -->
+    <circle cx="164" cy="88" r="8" fill="#4ade80">
+      <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ستاره‌های تزئینی -->
+  <circle cx="60" cy="60" r="1.5" fill="#9fa8da" opacity="0.6"/>
+  <circle cx="200" cy="70" r="1.5" fill="#9fa8da" opacity="0.6"/>
+  <circle cx="70" cy="200" r="1.5" fill="#9fa8da" opacity="0.6"/>
+  <circle cx="196" cy="196" r="1.5" fill="#9fa8da" opacity="0.6"/>
+</svg>
