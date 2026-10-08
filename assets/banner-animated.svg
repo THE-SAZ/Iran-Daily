@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Iran-Daily — Animated Banner
+  Author: THE SAZ (https://github.com/THE-SAZ)
+  License: MIT
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e27"/>
+      <stop offset="50%" stop-color="#111633"/>
+      <stop offset="100%" stop-color="#0a0e27"/>
+    </linearGradient>
+
+    <linearGradient id="flag" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4ade80">
+        <animate attributeName="stop-color"
+                 values="#4ade80;#22d3ee;#4ade80" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f87171">
+        <animate attributeName="stop-color"
+                 values="#f87171;#fbbf24;#f87171" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4ade80">
+        <animate attributeName="offset" values="0;0.5;0" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#22d3ee">
+        <animate attributeName="offset" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#60a5fa">
+        <animate attributeName="offset" values="1;1.5;1" dur="3s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <radialGradient id="glowGreen" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4ade80" stop-opacity="0.3">
+        <animate attributeName="stop-opacity" values="0.3;0.5;0.3" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.2">
+        <animate attributeName="stop-opacity" values="0.2;0.4;0.2" dur="3.5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e2451" stroke-width="0.5" opacity="0.5">
+        <animate attributeName="opacity" values="0.5;0.2;0.5" dur="4s" repeatCount="indefinite"/>
+      </path>
+    </pattern>
+
+    <filter id="textShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="400" fill="url(#bg)"/>
+  <rect width="1280" height="400" fill="url(#grid)"/>
+
+  <circle cx="200" cy="200" r="280" fill="url(#glowGreen)"/>
+  <circle cx="1080" cy="200" r="280" fill="url(#glowBlue)"/>
+
+  <!-- نوار پرچم بالا -->
+  <rect x="0" y="0" width="1280" height="4" fill="url(#flag)">
+    <animate attributeName="height" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="0" y="396" width="1280" height="4" fill="url(#flag)">
+    <animate attributeName="height" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- لوگو با انیمیشن شناور -->
+  <g transform="translate(1000, 100)">
+    <animateTransform attributeName="transform"
+                      type="translate"
+                      values="1000,100;1000,90;1000,100"
+                      dur="4s" repeatCount="indefinite"/>
+
+    <rect x="0" y="0" width="200" height="200" rx="48" fill="#151a3a" stroke="#1e2451" stroke-width="2"/>
+
+    <circle cx="100" cy="100" r="72" fill="none" stroke="url(#flag)" stroke-width="3"
+            stroke-dasharray="220 220" stroke-linecap="round" transform="rotate(-90 100 100)">
+      <animateTransform attributeName="transform"
+                        type="rotate"
+                        values="-90 100 100;270 100 100"
+                        dur="8s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="100" cy="100" r="58" fill="none" stroke="#4ade80" stroke-width="1"
+            stroke-dasharray="2 5" opacity="0.5"/>
+
+    <rect x="94" y="56" width="10" height="88" rx="5" fill="url(#flag)"/>
+
+    <path d="M 94 56 Q 138 56 138 100 Q 138 144 94 144"
+          fill="none" stroke="#4ade80" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- نقطه Live با پالس قوی -->
+    <circle cx="132" cy="68" r="7" fill="#4ade80">
+      <animate attributeName="r" values="7;10;7" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="132" cy="68" r="7" fill="none" stroke="#4ade80" stroke-width="2" opacity="0.6">
+      <animate attributeName="r" values="7;20;7" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- متن اصلی -->
+  <g filter="url(#textShadow)">
+    <text x="120" y="180"
+          font-family="Vazirmatn, Segoe UI, system-ui, sans-serif"
+          font-size="96" font-weight="800" fill="url(#titleGrad)" letter-spacing="-2">
+      Iran-Daily
+      <animate attributeName="opacity" values="1;0.95;1" dur="4s" repeatCount="indefinite"/>
+    </text>
+
+    <text x="120" y="235"
+          font-family="Vazirmatn, Segoe UI, system-ui, sans-serif"
+          font-size="26" font-weight="500" fill="#9fa8da" opacity="0.9">
+      داشبورد زنده کاربران حرفه‌ای ایرانی
+    </text>
+
+    <line x1="120" y1="260" x2="700" y2="260" stroke="#1e2451" stroke-width="1">
+      <animate attributeName="x2" values="120;700;120" dur="5s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- برچسب‌ها با ظاهر پلکانی -->
+    <g transform="translate(120, 285)">
+      <g opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite" begin="0s"/>
+        <rect x="0" y="0" width="90" height="30" rx="15" fill="#151a3a" stroke="#4ade80" stroke-width="1"/>
+        <text x="45" y="20" font-family="monospace" font-size="13" fill="#4ade80" text-anchor="middle" font-weight="600">TypeScript</text>
+      </g>
+      <g opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite" begin="1s"/>
+        <rect x="100" y="0" width="70" height="30" rx="15" fill="#151a3a" stroke="#777BB4" stroke-width="1"/>
+        <text x="135" y="20" font-family="monospace" font-size="13" fill="#a78bfa" text-anchor="middle" font-weight="600">PHP 8.3</text>
+      </g>
+      <g opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite" begin="2s"/>
+        <rect x="180" y="0" width="80" height="30" rx="15" fill="#151a3a" stroke="#22d3ee" stroke-width="1"/>
+        <text x="220" y="20" font-family="monospace" font-size="13" fill="#22d3ee" text-anchor="middle" font-weight="600">Live SSE</text>
+      </g>
+      <g opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite" begin="3s"/>
+        <rect x="270" y="0" width="90" height="30" rx="15" fill="#151a3a" stroke="#fbbf24" stroke-width="1"/>
+        <text x="315" y="20" font-family="monospace" font-size="13" fill="#fbbf24" text-anchor="middle" font-weight="600">Docker</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(120, 340)">
+    <text x="0" y="14" font-family="Vazirmatn, sans-serif" font-size="14" fill="#5c6bc0">Crafted with ❤️ by</text>
+    <text x="130" y="14" font-family="Vazirmatn, sans-serif" font-size="15" font-weight="700" fill="#fbbf24">THE SAZ</text>
+    <text x="215" y="14" font-family="monospace" font-size="13" fill="#5c6bc0">· github.com/THE-SAZ</text>
+  </g>
+
+  <!-- ستاره‌های چشمک‌زن -->
+  <g fill="#9fa8da">
+    <circle cx="80" cy="80" r="1.5">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="60" r="1">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite" begin="0.3s"/>
+    </circle>
+    <circle cx="500" cy="340" r="1.5">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite" begin="0.7s"/>
+    </circle>
+    <circle cx="820" cy="80" r="1">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="900" cy="340" r="1.5">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2.2s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="1180" cy="60" r="1">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.6s" repeatCount="indefinite" begin="0.4s"/>
+    </circle>
+    <circle cx="1240" cy="350" r="1.5">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" repeatCount="indefinite" begin="0.8s"/>
+    </circle>
+  </g>
+</svg>
