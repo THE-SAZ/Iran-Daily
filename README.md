@@ -1,6 +1,13 @@
 
 <div align="center">
+<!-- بنر اصلی -->
+<img src="assets/banner.svg" alt="Iran-Daily Banner" width="100%" />
 
+<br>
+<br>
+
+<!-- لوگو -->
+<img src="assets/logo.svg" alt="Iran-Daily Logo" width="120" height="120" />
 # 🇮🇷 Iran-Daily
 
 **داشبورد زنده کاربران حرفه‌ای ایرانی**
