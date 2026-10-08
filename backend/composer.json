@@ -1,0 +1,27 @@
+{
+  "name": "the-saz/iran-daily-backend",
+  "description": "Iran-Daily — Live Iranian Power-User Dashboard API Gateway",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "THE SAZ",
+      "homepage": "https://github.com/THE-SAZ"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "IranDaily\\": "src/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}
