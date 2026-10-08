@@ -1,0 +1,99 @@
+# ──────────────────────────────────────────────
+# Iran-Daily — CI Pipeline
+# Author: THE SAZ (https://github.com/THE-SAZ)
+# ──────────────────────────────────────────────
+#
+# Optimized for minimal token usage:
+#   - Single job with matrix (PHP + Node)
+#   - Path filters to skip doc-only changes
+#   - Concurrency cancel-in-progress
+#   - Aggressive dependency caching
+#
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE'
+      - '.gitignore'
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE'
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build & Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: backend
+            language: php
+            version: '8.3'
+          - target: frontend
+            language: node
+            version: '20'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── Backend ────────────────────────────
+      - name: Setup PHP
+        if: matrix.language == 'php'
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.version }}
+          tools: composer
+          coverage: none
+
+      - name: Cache Composer
+        if: matrix.language == 'php'
+        uses: actions/cache@v4
+        with:
+          path: ~/.composer/cache
+          key: composer-${{ hashFiles('backend/composer.json') }}
+          restore-keys: composer-
+
+      - name: Install PHP deps
+        if: matrix.language == 'php'
+        working-directory: backend
+        run: composer install --no-progress --no-interaction --prefer-dist
+
+      - name: Lint PHP
+        if: matrix.language == 'php'
+        run: find backend/src backend/public scripts -name '*.php' -exec php -l {} \;
+
+      # ── Frontend ───────────────────────────
+      - name: Setup Node
+        if: matrix.language == 'node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.version }}
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install Node deps
+        if: matrix.language == 'node'
+        working-directory: frontend
+        run: npm ci --prefer-offline
+
+      - name: Type-check & Build
+        if: matrix.language == 'node'
+        working-directory: frontend
+        run: npm run build
