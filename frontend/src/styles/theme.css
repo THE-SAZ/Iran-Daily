@@ -1,0 +1,64 @@
+/**
+ * Iran-Daily — Design Tokens
+ *
+ * @author THE SAZ <https://github.com/THE-SAZ>
+ */
+
+:root {
+  /* ── Colors ───────────────────────────────── */
+  --bg:            #0a0e27;
+  --bg-elevated:   #111633;
+  --bg-card:       #151a3a;
+  --bg-card-hover: #1a2045;
+
+  --text-primary:  #e8eaf6;
+  --text-secondary:#9fa8da;
+  --text-muted:    #5c6bc0;
+
+  --accent:        #4ade80;
+  --accent-dim:    #22c55e;
+  --danger:        #f87171;
+  --warning:       #fbbf24;
+  --info:          #60a5fa;
+
+  --border:        rgba(255, 255, 255, 0.06);
+  --border-hover:  rgba(255, 255, 255, 0.12);
+
+  /* ── Gradients ────────────────────────────── */
+  --gradient-brand: linear-gradient(135deg, #4ade80 0%, #22d3ee 100%);
+  --gradient-gold:  linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+
+  /* ── Spacing ──────────────────────────────── */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+
+  /* ── Radius ───────────────────────────────── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ──────────────────────────────── */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(74, 222, 128, 0.15);
+
+  /* ── Transitions ──────────────────────────── */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Typography ───────────────────────────── */
+  --font-family: 'Vazirmatn', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono:   'JetBrains Mono', 'Fira Code', monospace;
+
+  --text-xs: 0.7rem;
+  --text-sm: 0.8rem;
+  --text-base: 0.9rem;
+  --text-lg: 1.1rem;
+  --text-xl: 1.4rem;
+  --text-2xl: 1.8rem;
+}
